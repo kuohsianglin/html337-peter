@@ -1,0 +1,203 @@
+body {
+    /* 使用微軟正黑體 */
+    font-family: 'Microsoft Jhenghei';
+}
+
+/*============ index 頁面 ============*/
+
+.img-grayscale {
+    filter: grayscale(100%);
+    opacity: .7;
+    /* 漸變: CSS屬性名稱 時間 速度曲線名稱; */
+    transition: all .5s ease;  /* 所有屬性 2秒 */
+}
+
+.img-grayscale:hover {
+    filter: grayscale(0%);
+    opacity: 1;
+}
+
+.red-title {
+    font-size: 42px;
+    color: red;
+    /* text-align: center; */
+    text-shadow: 0px 3px 3px rgba(0, 0, 0, 0.3);
+    /* 註解 Ctrl + /  */
+    /* text-shadow: x y blur color;  */
+}
+
+.text-center { /* 選擇器 */
+    text-align: center;
+}
+
+.text-right {
+    text-align: right;
+}
+
+/*============ cards 頁面 ============*/
+
+/* 排版: 大小、對齊方式、留白  */
+* {
+    /* 選到所有元素  */
+    /* border: 1px solid black;  */
+}
+
+/* 放置所有內容的容器 */
+/* .wrap -> 有些名稱叫這個*/
+.container {
+    border: 1px solid black;
+    width: 100%;
+    margin: 0 auto;
+}
+
+@media (min-width: 577px) {
+    .container {
+        width: 570px;
+    }
+}
+
+@media (min-width: 768px) {
+    .container {
+        width: 760px;
+    }
+}
+
+@media (min-width: 991px) {
+    .container {
+        width: 990px;
+    }
+}
+
+@media (min-width: 1440px) {
+    .container {
+        width: 1200px;
+    }
+}
+
+/* 放置所有col的容器 */
+.row {
+    /* 讓內部元素橫著排 */
+    display: flex; 
+    /* 不要自動縮放，讓內部元素擺不下就換行 */
+    flex-wrap: wrap;
+}
+
+/* 一張卡片所在的容器 */
+.col {
+    /* width: 33.333%;  */
+    width: calc(100% / 3);
+    padding: 15px 15px;
+}
+
+/* Media Query: 設定某些選擇器只在符合某種視窗寬度的條件下才有效 */
+@media (max-width: 576px) {
+    /* 以下的選擇器只在視窗寬度 <= 700px 有效 */
+    .col {
+        /* background: orange;  */
+        width: 100%;
+    }
+    
+    .card-title {
+        text-align: center;
+    }
+}
+
+/* 577~900 視窗寬度 */
+@media (min-width: 577px) and (max-width: 900px) {
+    .col {
+        width: 50%;
+    }
+}
+
+/* 一張卡片 */
+.card {
+    border-radius: 6px;
+    /* 讓內部超出邊界的部分隱藏 */
+    overflow: hidden;
+    box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.4);
+    opacity: .7;
+    transform: scale(.95);
+    transition: all .5s ease; 
+}
+
+.card:hover {
+    box-shadow: 0px 23px 20px rgba(0, 0, 0, 0.4);
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* 選到.card被hover後裡面的.card-title */
+.card:hover .card-title {
+    color: tomato;
+}
+
+/* 卡片圖片 */
+.card-img {
+    width: 100%;
+    display: block;
+}
+
+/* 卡片文字區 */
+.card-body {
+    /* padding-left: 50px;  */
+    /* padding-top: 30px;  */
+    /* margin-right: 70px;  */
+    /* margin-left: 70px;  */
+
+    /* padding: 上下 左右;  */
+    padding: 20px 20px;
+
+}
+
+/* 卡片標題 */
+.card-title {
+    margin-top: 0; /* 只有0不用寫單位 */
+}
+
+/* 選到.card-title */
+ /* .card-title:hover {
+    color: tomato;
+}  */
+
+/* 卡片內文 */
+.card-text {
+    margin-bottom: 0; /* 只有0不用寫單位 */
+}
+
+/* 卡片分類徽章 */
+.badge {
+    background: #ccc;
+    color: white;
+    padding: 0px 6px;
+    background-repeat: 4px;
+}
+
+.bg-tomato {
+    background: tomato;
+}
+
+.bg-purple {
+    background: purple;
+}
+
+/*============ table 頁面 ============*/
+table,td,th {
+    border: 1px solid #333;
+    border-collapse: collapse;
+}
+
+td,th {
+    padding: 8px 16px;
+}
+
+.price {
+    text-align: right;
+}
+
+.price:before {
+    content: "$ ";
+}
+
+.price:after {
+    content: " NTD";
+}

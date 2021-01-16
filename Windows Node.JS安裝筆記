@@ -1,0 +1,8 @@
+Step1: 搜尋並安裝 Node.JS LTS版本(一直按下一步)
+Step2: 開始->搜尋->Powershell->按右鍵選”已系統管理員身份執行”
+Step3: 開啟Powershell
+Step4: Powershell內執行以下兩行指令
+Get-ExecutionPolicy ->顯示Restricted
+Set-ExecutionPolicy Unrestricted -> 輸入y 按下enter
+
+Get-ExecutionPolicy -> 顯示Unrestricted，代表設定完成
